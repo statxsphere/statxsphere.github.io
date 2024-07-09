@@ -6,6 +6,12 @@
     <title>Shubham Agarwal - Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .center-align {
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -15,20 +21,101 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
-            <!-- <li><a href="education.html">Education</a></li> -->
             <li><a href="projects.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
         </ul>
     </nav>
     <div class="container">
         <div class="content">
-            <div class="item">
-                <h3>Climate Risk Data Pipeline</h3>
-                <p>Developed an end-to-end pipeline for processing and analyzing climate risk data.</p>
-                <p>Technologies used: Python, AWS, Docker, Machine Learning</p>
-                <p><a href="#">GitHub Repository</a></p>
+            <div class="project-container center-align">
+                <h3>[[ This Project is a WIP ]] Solar Rooftop Potential from RGB Raster</h3>
+                <img src="https://archiroots.com/wp-content/uploads/2022/12/google-project-sunroof.jpeg" style="width: 70%; height: auto;">
             </div>
-            <!-- Add more project items here -->
+                <p><strong>Done:</strong> </p>
+                <ul>
+                    <li>Methodology developed to obtain irradiance from elevation and geoJSON files using PVLib and Weather Data.</li>
+                </ul>
+                <p><strong>To Do:</strong> </p>
+                <ul>
+                    <li>Methodology to obtain elevation from raster. (<a href="https://github.com/speed8928/IMELE">reference</a>)</li>
+                    <li>Methodology to segment/detect rooftops from raster. (<a href="https://github.com/pypye/rooftop_detection">reference</a>)</li>
+                </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="project-container center-align">
+                <h3>Product: NBA Draft Evaluation V2</h3>
+                <p><a href="https://github.com/statxsphere/nba_draft">Code</a> | <a href="https://statosphere-nba-draft-projections.streamlit.app/">Website</a></p>
+                <img src="https://ca-times.brightspotcdn.com/dims4/default/f7e9427/2147483647/strip/true/crop/7150x4767+0+1/resize/2400x1600!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F9d%2F0b%2Fc033192d4f29bb117bba684fb5e6%2Fnba-draft-basketball-95206.jpg" alt="NBA Draft 2023" style="width: 90%; height: auto;">
+            </div>
+                <p><strong>Skills used:</strong> Web Scraping, Object Oriented Programming, Averaged Regression Models, Clustering, PCA, Cosine Similarity, Deployment Via Streamlit, Dashboarding. </p>
+                <p><strong>Data:</strong> Scraped from tankathon.com and basketball-reference.com using bs4 and nba.com using APIs.</p>
+                <p><strong>Improvements:</strong></p>
+                <ul>
+                    <li>New labels were used as the regression output: Peak Impact Rating and Immediate Impact Rating.</li>
+                    <li>Peak Impact Rating: highest 3-season rolling average VORP, extrapolated to a (-10,10) range.</li>
+                    <li>Immediate Impact Rating: average first 2 season VORP, extrapolated to a (-10,10) range.</li>
+                    <li>Clustering and similarity was used to find player comps for their ceiling and floor.</li>
+                    <li>Dashboard of the above info was deployed using Streamlit.</li>
+                </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="project-container center-align">
+                <h3>Data Story: The impact of COVID-19 on Bengaluru's Air Quality</h3>
+                <p><a href="https://github.com/statxsphere/aqi_bangalore/blob/main/Lockdown_AQI.ipynb">Code</a> | <a href="https://shoobydo.substack.com/p/the-covid-lockdowns-were-a-breath">Blog</a></p>
+                <img src="https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F87190c72-b071-4f21-9523-b98808bb45d1_634x311.png" alt="COVID-19 on Bengaluru's Air Quality">
+            </div>
+                <p><strong>Skills used:</strong> Time-Series Forecasting, LSTM Neural Networks, Geospatial Plotting, Hypothesis Testing (ANOVA).</p>
+                <p><strong>Data:</strong> World Weather Online API, Kaggle, and OpenBangalore.</p>
+                <p><strong>Summary:</strong></p>
+                <ul>
+                    <li>Data was sourced using an online API and Kaggle.</li>
+                    <li>The trends and relationships between weather and air quality data in Bangalore were explored.</li>
+                    <li>Conducted hypothesis testing to check for statistically significant change in air quality before and after covid travel restrictions.</li>
+                    <li>Modelled a LSTM Neural Network to forecast Bangalore's Air Quality and contrasted forecasts made using pre and post travel restriction data.</li>
+                </ul>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="project-container center-align">
+                <h3>Product: Anime Recommendation Engine</h3>
+                <p><a href="https://github.com/statxsphere/anime">Code</a> | <a href="https://share.streamlit.io/statxsphere/anime/explore.py">Website</a></p>
+                <img src="https://c.tenor.com/TKKlYOpCbV8AAAAC/dragon-ball-z-dbz.gif" alt="Anime Recommendation Engine">
+            </div>    
+                <p><strong>Skills used:</strong> Clustering, PCA, Cosine Similarity, Deployment Via Streamlit, Tableau, Photoshop.</p>
+                <p><strong>Data:</strong> Kaggle.</p>
+                <p><strong>Summary:</strong></p>
+                <ul>
+                    <li>Exploratory data analysis was conducted to understand the drivers and trends in anime viewership.</li>
+                    <li>AniMap was made, which is a plotly treemap that can be used to explore the dataset visually.</li>
+                    <li>The recommendation engine: Anime Scout was developed, which can be used to generate recommendations out of previously watched anime.</li>
+                    <li>Both the aforementioned were deployed using Streamlit.</li>
+                </ul>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="project-container center-align">
+                <h3>Data Story: NBA Draft Evaluation V1</h3>
+                <p><a href="https://github.com/statxsphere/nba_draft">Code</a> | <a href="https://shoobydo.substack.com/p/nba-draft-2021-an-analysis">Blog</a></p>
+                <img src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F20fc4431-84a8-4aa3-bba8-c63f6bde7329_1432x771.png" alt="NBA Draft 2021 Analysis" style="width: 90%; height: auto;">
+            </div>
+                <p><strong>Skills used:</strong> Web Scraping, Object Oriented Programming, Averaged Regression Models, Classification, Tableau.</p>
+                <p><strong>Data:</strong> Scraped from tankathon.com, nba.com and basketball-reference.com using bs4 and selenium.</p>
+                <p><strong>Summary:</strong></p>
+                <ul>
+                    <li>Data was scraped from Tankathon (pre-draft stats), Basketball Reference (nba stats), and nba.com (advanced stats).</li>
+                    <li>The features were explored to determine what makes a good draft pick.</li>
+                    <li>Averaged regression models were used to predict which player from the current draft class could be the best.</li>
+                    <li>Classification was used to explore possible player archetypes.</li>
+                </ul>
+            
         </div>
     </div>
     <footer>

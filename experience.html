@@ -4,8 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Agarwal - Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 20px; /* Leave space for the arrow */
+            left: 50px;
+            margin-left: -3px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 20px solid var(--primary-color);
+            margin-left: -9px; /* Align the arrow with the line */
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: calc(100% - 90px);
+            left: 90px;
+        }
+
+        .timeline-item::before {
+            content: attr(data-year); /* Add this to display the year */
+            position: absolute;
+            width: 80px;
+            left: -150px; /* Adjust this value as needed */
+            top: 35px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: 0px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 35px;
+            border-radius: 50%;
+            z-index: 1;
+            left: -50px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,24 +86,72 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
-            <!-- <li><a href="education.html">Education</a></li> -->
             <li><a href="projects.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
         </ul>
     </nav>
     <div class="container">
-        <div class="content">
-            <div class="item">
-                <h3>Senior Data Scientist</h3>
-                <p class="date">October 2023 - Present</p>
-                <p>Blue Sky Analytics, San Jose, CA</p>
-                <ul>
-                    <li>Developed and managed data products in carbon, energy, and infrastructure markets.</li>
-                    <li>Created dynamic presentations and pitched products to secure pilot projects.</li>
-                    <li>Leveraged cloud-computing and computer vision to design end-to-end pipelines.</li>
-                </ul>
+        <div class="timeline">
+            <div class="timeline-item" data-year="2018">
+                <div class="timeline-content">
+                    <h2>Data Analyst Intern</h2>
+                    <h3>InTheGame Analytics</h3>
+                    <p class="date">June 2018 - December 2018</p>
+                    <ul>
+                        <li>Created engaging and informative consumer dashboards using various visualizations such as heatmaps, radars and coordinate plots using Tableau, Excel and RStudio.</li>
+                        <li>Developed interactive and entertaining daily content that increased Facebook interactions by 12%.</li>
+                        <li>Used logistic regression to design an 'expected goals' model, which was further used to add new insights and visualisations to their platform.</li>
+                    </ul>
+                </div>
             </div>
-            <!-- Add more experience items here -->
+            <div class="timeline-item" data-year="2019">
+                <div class="timeline-content">
+                    <h2>Founder and CEO</h2>
+                    <h3>Statosphere Technology</h3>
+                    <p class="date">May 2019 - Jan 2021</p>
+                    <ul>
+                        <li>Pitched and secured commercial partnerships with football and basketball academies of various scales.</li>
+                        <li>Designed dynamic dashboards and delivered player level analytics to enable coaches with insight to make better in-game and training decisions.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="2021">
+                <div class="timeline-content">
+                    <h2>Associate Data Scientist</h2>
+                    <h3>SportsKPI</h3>
+                    <p class="date">March 2021 - August 2021</p>
+                    <ul>
+                        <li>Designed and implemented data pipelines using Python to automate preprocessing, cleaning, analysis, and storage of data on a MySQL database hosted on AWS S3, and codebase hosted on Github.</li>
+                        <li>Helped in the AIFF's selection of the Indian National Team for the u23 Football World Cup by generating insights from a state-level tournament and selecting the top prospects for the national team.</li>
+                        <li>Used regression splines to work on a new metric - 'True Raider Impact' for Kabaddi which was be used by teams to make decisions at the Pro Kabaddi League auctions.</li>
+                        <li>Recruited, trained and mentored Data Engineer Interns on Object Oriented Programming, MySQL and Git.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="2021">
+                <div class="timeline-content">
+                    <h2>Blue Sky Analytics</h2>
+                    <h3>Data Scientist</h3>
+                    <p class="date">November 2021 - September 2023</p>
+                    <ul>
+                        <li>Deployed a containerized Convolutional Neural Networks model (U-Net) to AWS Lambda to segment smoke plumes from satellite imagery of fossil fuel power plants, and integrated another regression layer to predict daily CO2 emissions from the plants.</li>
+                        <li>Leveraged cloud-computing, containerization, statistical methods, and computer vision to design and develop climate-risk datasets using Python, AWS, and Docker that are accessible via proprietary APIs.</li>
+                    </ul>
+                    <h3>Senior Data Scientist</h3>
+                    <p class="date">October 2023 - Present</p>
+                    <ul>
+                        <li>Developed, deployed, and maintained solar energy datasets such as solar panel segmentation and detection, annual energy yield, and annual irradiation yield using statistical and CNN-based methods.</li>
+                        <li>Developed and managed data products in carbon, energy, and infrastructure markets.</li>
+                        <li>Created dynamic presentations and pitched products to secure pilot projects with Top 3 organisations in the global sustainable palm oil and petrochemical industries, and the Indian renewable energy industry.</li>
+                    </ul>
+                <!-- </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"> -->
+                    <!-- <h2>Data Scientist</h2> -->
+                    
+                </div>
+            </div>
         </div>
     </div>
     <footer>
