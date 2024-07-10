@@ -36,10 +36,10 @@ header::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://priusintelli.com/wp-content/uploads/2023/05/remote-sensing-technology.jpg');
+  background-image: url('https://t4.ftcdn.net/jpg/03/67/77/59/360_F_367775957_UMmb63PtKFsFUG0E6ikyKSIsVVA5GW2b.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(2px);
+  filter: blur(3px);
   z-index: 1;
 }
 
