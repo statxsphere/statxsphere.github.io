@@ -1,86 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Agarwal - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: block;
-            border: 4px solid white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-        .sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        .section-link {
-            display: block;
-            padding: 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            text-align: center;
-            font-weight: 600;
-        }
-        .section-link:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubham Agarwal · Geospatial Data Engineer</title>
+  <meta name="description" content="Shubham Agarwal: geospatial data engineer turning aerial imagery, LiDAR and satellite data into national-scale datasets. Formerly sports analytics and climate tech.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171717'/%3E%3Cpath d='M8 22V12h7v4h9v6z' fill='none' stroke='%23f97316' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
-    <header>
-        <img src="assets/profile-pic.jpg" alt="Shubham Agarwal" class="profile-pic">
-        <h1>Shubham Agarwal</h1>
-        <h3>Data Scientist</h3>
-    </header>
-    <!-- <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-        </ul>
-    </nav> -->
-    <div class="container">
-        <div class="content">
-            <h2>Hi, there!</h2>
-            <p>Welcome to my website! </p>
-            <p>I'm a data scientist with 5+ years of experience across various domains. Focused on creativity, collaboration, and effective communication, I approach problems with a solution-first mentality. </p> 
-            <p>I would love for you to check out the following pages to get to know me better:</p>
-            <div class="sections">
-                <a href="experience.html" class="section-link">Experience</a>
-                <!-- <a href="education.html" class="section-link">Education</a> -->
-                <a href="projects.html" class="section-link">Projects</a>
-                <a href="skills.html" class="section-link">Skills</a>
-            </div>
-            <p></p>
-            <h2>My Story</h2>
-            <p>My data journey started with sports. As someone who was blown away by moments of magic created in various arenas as a kid, teenager, and even as an adult, I soon realised that I had a strong desire to be involved in this industry. Being struck by this realisation during my college days drove me to find my first internship in 2018. To this day, I am grateful to my time there, for not only helping me understand how sports businesses function but also for getting me hooked on the world of data science.</p>
-            <p>With minimal experience, maximal ambition, and perhaps a small nudge from being an MBA student, I co-founded my own sports analytics firm in 2019 as I believed that there were gaps that could be bridged in the sports analytics landscape in India. With a dream to take India to the FIFA World Cup fueling us, we were able to kick things off and run smoothly despite being a bootstrap venture. However, during the COVID-19 pandemic, we had to shut down as it is hard to analyze sports when no sports are being played. This was a very challenging time for me, but also a period of exponential growth where I channelled the shortcomings I faced and levelled up my skills to match my ambition and passion.</p>
-            <p>The impact of the pandemic ran deeper than just my skillset, however, as it elicited within me a feeling of dread regarding climate change as another looming threat to civilization as we know it. Since 2021, I have actively and intentionally postioned myself as a stakeholder in the climate tech space, with a special focus on solar energy technology and carbon emissions monitoring as these are the domains where my interests and potential for impact intersect the most.</p>
-            <p>Today I see myself as a data and product professional vying for growth in role and responsibility, to be able to engage with stakeholders and affect change in order to leave the world a better place when I go out than when I came in. I hope we're able to help each other do the same. Cheers!</p>
-
-        </div>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">shubham<span>.</span>agarwal</a>
+      <ul>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode">
+        <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
     </div>
-    <footer>
-        <p>
-            <a href="mailto:agarwalsshubham0@gmail.com">Email</a> |
-            <a href="https://github.com/statxsphere">GitHub</a> |
-            <a href="https://linkedin.com/in/shubham0agarwal">LinkedIn</a>
-        </p>
-        <p>&copy; 2024 Shubham Agarwal. All rights reserved.</p>
-    </footer>
+  </nav>
+
+  <header class="hero" id="top">
+    <svg class="footprints" viewBox="0 0 600 400" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M40 40h90v50h-40v40H40z"/>
+      <path d="M160 30h70v70h-70z"/>
+      <path d="M260 40h120v40h-50v50h-70z"/>
+      <path d="M410 30h80v60h-80z"/>
+      <path d="M520 40h60v90h-60z"/>
+      <path d="M50 160h60v80H50z"/>
+      <path d="M140 150h100v40h-30v60h-70z" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <path d="M270 160h60v60h-60z"/>
+      <path d="M360 150h50v100h-50z"/>
+      <path d="M440 140h110v50h-50v60h-60z"/>
+      <path d="M40 280h110v60H40z"/>
+      <path d="M180 280h60v90h-60z"/>
+      <path d="M270 260h90v40h-30v60h-60z"/>
+      <path d="M390 280h70v70h-70z"/>
+      <path d="M490 280h80v40h-30v50h-50z" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <path d="M0 132h600M0 262h600M148 0v400M392 0v400" stroke-dasharray="2 6" opacity="0.8"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>Senior Data Engineer at Chimnie · Bengaluru</span>
+          <h1>Shubham Agarwal</h1>
+          <p class="lede">Geospatial data engineer. I turn <strong>aerial imagery, LiDAR and satellite data</strong> into national-scale datasets, most recently a footprint for every building in Great Britain. I got here via football.</p>
+          <div class="actions">
+            <a class="btn primary" href="#work">See the work</a>
+            <a class="btn" href="mailto:agarwalsshubham0@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/shubham0agarwal/">LinkedIn</a>
+            <a class="btn" href="https://github.com/statxsphere">GitHub</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="assets/profile.webp" alt="Shubham Agarwal standing by the sea" width="640" height="640">
+          <span class="portrait-tag">pictured: touching grass</span>
+        </div>
+      </div>
+
+      <div class="scoreboard" aria-label="Career box score">
+        <div class="score"><small>Polygons</small><b>24.2M</b><span>buildings mapped across Great Britain</span></div>
+        <div class="score"><small>Solar pilot</small><b>~1,000 MW</b><span>of solar farms monitored, about 3,000 ha</span></div>
+        <div class="score"><small>Since 2018</small><b>8</b><span>seasons in data, sports to satellites</span></div>
+        <div class="score"><small>Statosphere</small><b>1</b><span>bootstrapped startup, founded 2019</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="story">
+      <div class="wrap">
+        <div class="section-head"><span class="num">01</span><h2>My story, in halves</h2><p>Hi, there! Welcome to my website.</p></div>
+        <div class="story">
+          <div class="half">
+            <div class="label"><b>Kick-off</b><span>2018 · sports</span></div>
+            <p>My data journey started with sports. As someone who was blown away by moments of magic created in various arenas as a kid, teenager, and even as an adult, I soon realised that I had a strong desire to be involved in this industry. Being struck by this realisation during my college days drove me to find my first internship in 2018. To this day, I am grateful to my time there, for not only helping me understand how sports businesses function but also for getting me hooked on the world of data science.</p>
+          </div>
+          <div class="half">
+            <div class="label"><b>First half</b><span>2019–21 · the startup</span></div>
+            <p>With minimal experience, maximal ambition, and perhaps a small nudge from being an MBA student, I co-founded my own sports analytics firm in 2019 as I believed that there were gaps that could be bridged in the sports analytics landscape in India. With a dream to take India to the FIFA World Cup fueling us, we were able to kick things off and run smoothly despite being a bootstrap venture. However, during the COVID-19 pandemic, we had to shut down as it is hard to analyze sports when no sports are being played. This was a very challenging time for me, but also a period of exponential growth where I channelled the shortcomings I faced and levelled up my skills to match my ambition and passion.</p>
+          </div>
+          <div class="half">
+            <div class="label"><b>Second half</b><span>2021–24 · climate tech</span></div>
+            <p>The impact of the pandemic ran deeper than just my skillset, however, as it elicited within me a feeling of dread regarding climate change as another looming threat to civilization as we know it. Since 2021, I have actively and intentionally positioned myself as a stakeholder in the climate tech space, with a special focus on solar energy technology and carbon emissions monitoring as these are the domains where my interests and potential for impact intersect the most.</p>
+          </div>
+          <div class="half">
+            <div class="label"><b>Extra time</b><span>2024– · maps</span></div>
+            <p>In August 2024 I joined Chimnie, a UK property-data company, and went from analysing footballers to mapping roofs. I led Polygons: a model that reads aerial photos and laser height data to draw every building in Great Britain, 24.2 million of them, each linked to its addresses.</p>
+          </div>
+          <div class="half now">
+            <div class="label"><b>Full time?</b><span>not yet</span></div>
+            <p>Today I see myself as a data and product professional vying for growth in role and responsibility, to be able to engage with stakeholders and affect change in order to leave the world a better place when I go out than when I came in. I hope we're able to help each other do the same. Cheers!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head"><span class="num">02</span><h2>Work</h2><p>Eight seasons, three leagues.</p></div>
+        <div class="roles">
+          <article class="card role">
+            <div class="role-head"><h3>Senior Data Engineer</h3><span class="org">Chimnie · UK property data</span><span class="when">Aug 2024 – now</span></div>
+            <ul>
+              <li>Led Polygons, a national roof-footprint dataset: <span class="hl">24.2 million buildings</span> across England, Scotland and Wales, linked to all <span class="hl">35.4 million addresses</span>. It finds 98% of the addressed buildings in the national reference map, a dataset licensed at £5.4 million a year.</li>
+              <li>Built the model: a ConvNeXt segmentation network fusing 25 cm aerial imagery with LiDAR height, pre-trained on a multi-country building dataset and fine-tuned on UK labels. Held-out building F1 of 0.90.</li>
+              <li>Ran national inference on GCP: a Vertex AI GPU fleet over 9,947 tiles, post-processed and published to cloud storage. Launch to release in 3 days.</li>
+              <li>Designed the labelling system (label contract, custom annotation app, vision-model drafts behind a human approval gate) and reviewed every training label. Ran the build with a team of AI coding agents behind review gates.</li>
+              <li>Delivered regional client datasets, such as Greater Nottingham (260,828 buildings, 402,827 addresses), as GeoParquet and GeoPackage.</li>
+            </ul>
+            <div class="badges"><span class="badge accent">Computer vision</span><span class="badge">PyTorch</span><span class="badge">LiDAR</span><span class="badge">Vertex AI</span><span class="badge">GeoParquet</span><span class="badge">DuckDB</span></div>
+          </article>
+
+          <article class="card role">
+            <div class="role-head"><h3>Senior Data Scientist</h3><span class="org">Blue Sky Analytics · climate and energy data</span><span class="when">Oct 2023 – Jul 2024</span></div>
+            <ul>
+              <li>Ran a solar-asset pilot for an Indian renewable-energy company: <span class="hl">3 solar farms, about 3,000 ha and 1,000 MW</span>. Built panel segmentation and detection, and annual irradiation and energy-yield forecasts, from raster and LiDAR data.</li>
+              <li>Pitched data products to win pilots with top-3 companies in sustainable palm oil and petrochemicals.</li>
+            </ul>
+            <div class="sub">
+              <div class="role-head"><h3>Data Scientist</h3><span class="org">Blue Sky Analytics</span><span class="when">Nov 2021 – Sep 2023</span></div>
+              <ul>
+                <li>Deployed a containerised U-Net on AWS Lambda that segments smoke plumes in satellite images of fossil-fuel power plants, with a regression layer estimating daily CO₂ emissions.</li>
+                <li>Built climate-risk and emissions datasets from remote sensing and IoT data with Python, AWS and Docker, served through the company's APIs.</li>
+              </ul>
+            </div>
+            <div class="badges"><span class="badge accent">Solar</span><span class="badge">Emissions</span><span class="badge">U-Net</span><span class="badge">AWS Lambda</span><span class="badge">Google Earth Engine</span></div>
+          </article>
+
+          <article class="card role">
+            <div class="role-head"><h3>Associate Data Scientist</h3><span class="org">SportsKPI</span><span class="when">Mar 2021 – Aug 2021</span></div>
+            <ul>
+              <li>Built Python pipelines that clean and load match data into MySQL on AWS.</li>
+              <li>Helped the AIFF select India's U-23 football squad with insights from a state-level tournament.</li>
+              <li>Created "True Raider Impact", a regression-spline metric that Pro Kabaddi teams used at the auction. Recruited and mentored the data-engineering interns.</li>
+            </ul>
+            <details class="earlier">
+              <summary>Earlier: founder, and the internship that started it</summary>
+              <div class="role-head"><h3>Founder and CEO</h3><span class="org">Statosphere Technology</span><span class="when">May 2019 – Jan 2021</span></div>
+              <ul>
+                <li>Signed partnerships with football and basketball academies in Bengaluru and gave their coaches player-level analytics for match and training decisions.</li>
+              </ul>
+              <div class="role-head" style="margin-top:1rem"><h3>Data Analyst Intern</h3><span class="org">InTheGame Analytics</span><span class="when">Jun 2018 – Dec 2018</span></div>
+              <ul>
+                <li>Built an "expected goals" model with logistic regression and football dashboards in Tableau and R.</li>
+                <li>Made daily content that raised Facebook interactions by 12%.</li>
+              </ul>
+            </details>
+            <div class="badges"><span class="badge accent">Sports analytics</span><span class="badge">MySQL</span><span class="badge">Regression splines</span><span class="badge">Tableau</span></div>
+          </article>
+
+          <article class="card role">
+            <div class="role-head"><h3>Education</h3><span class="org">and a couple of certificates</span></div>
+            <ul>
+              <li>MBA, ESG Paris–India (2018–2020) · BA, Christ University, Bengaluru (2015–2018)</li>
+              <li>IBM Product Manager and Agile · Imperial College London, Mathematics for Machine Learning</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><span class="num">03</span><h2>Projects</h2><p>Side quests, mostly sports and sunshine.</p></div>
+        <div class="projects">
+          <article class="card project wide">
+            <div class="media">
+              <svg viewBox="0 0 320 180" aria-hidden="true">
+                <rect width="320" height="180" fill="var(--muted)"/>
+                <circle cx="250" cy="44" r="18" fill="var(--accent)"/>
+                <g stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity="0.7">
+                  <path d="M250 14v-8M250 82v8M220 44h-8M280 44h8M229 23l-6-6M271 65l6 6M229 65l-6 6M271 23l6-6"/>
+                </g>
+                <g fill="none" stroke="var(--foreground)" stroke-width="1.5" opacity="0.75">
+                  <path d="M40 150v-50l40-30 40 30v50z"/>
+                  <path d="M140 150v-40h70v40z"/>
+                  <path d="M140 110l35-28 35 28"/>
+                </g>
+                <g stroke="var(--accent)" stroke-width="7" stroke-linecap="butt">
+                  <path d="M49 89l23-17M88 72l23 17M149 99l19-15M182 84l19 15"/>
+                </g>
+                <path d="M20 150h280" stroke="var(--ring)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="body">
+              <span class="kind">Solar · geospatial</span>
+              <h3>Solar rooftop potential from RGB rasters</h3>
+              <p>How much sun does a roof actually get? A pipeline that turns an aerial image into a rooftop solar estimate.</p>
+              <ul>
+                <li>Irradiance from elevation data and roof outlines (GeoJSON) using PVLib and weather data.</li>
+                <li>Elevation estimated from the raster itself, and rooftops segmented and detected from RGB imagery.</li>
+              </ul>
+              <div class="links"><span class="note">Code available on request</span></div>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="media">
+              <svg viewBox="0 0 320 180" aria-hidden="true">
+                <rect width="320" height="180" fill="var(--muted)"/>
+                <g fill="none" stroke="var(--ring)" stroke-width="1.5">
+                  <rect x="30" y="20" width="260" height="140" rx="2"/>
+                  <path d="M160 20v140"/><circle cx="160" cy="90" r="22"/>
+                  <path d="M30 60h52v60H30M290 60h-52v60h52"/>
+                  <path d="M82 66a24 24 0 0 1 0 48M238 66a24 24 0 0 0 0 48"/>
+                </g>
+                <text x="160" y="97" text-anchor="middle" font-family="Geist Mono, monospace" font-size="20" font-weight="600" fill="var(--accent)">#1</text>
+              </svg>
+            </div>
+            <div class="body">
+              <span class="kind">Product · NBA</span>
+              <h3>NBA Draft Evaluation V2</h3>
+              <p>Who is the best player in the draft class, and who do they remind us of?</p>
+              <ul>
+                <li>Two new targets: Peak Impact Rating (best 3-season rolling VORP) and Immediate Impact Rating (first 2 seasons), both scaled to −10 to 10.</li>
+                <li>Clustering and similarity find each prospect's ceiling and floor comps, served in a Streamlit dashboard.</li>
+              </ul>
+              <div class="links"><a href="https://github.com/statxsphere/nba_draft">Code →</a><a href="https://statosphere-nba-draft-projections.streamlit.app/">Live app →</a><span class="note">it naps; wake it up</span></div>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="media"><img src="https://c.tenor.com/TKKlYOpCbV8AAAAC/dragon-ball-z-dbz.gif" alt="Dragon Ball Z powering up" loading="lazy"></div>
+            <div class="body">
+              <span class="kind">Product · anime</span>
+              <h3>Anime Recommendation Engine</h3>
+              <p>Tell it what you've watched; Anime Scout tells you what to watch next.</p>
+              <ul>
+                <li>EDA of what drives anime viewership, plus AniMap, a Plotly treemap to explore the catalogue.</li>
+                <li>Recommendations with clustering, PCA and cosine similarity, deployed on Streamlit.</li>
+              </ul>
+              <div class="links"><a href="https://github.com/statxsphere/anime">Code →</a><a href="https://statxsphere-anime-explore-8o50xg.streamlit.app/">Live app →</a></div>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="media"><img class="contain" src="assets/blog-aqi.webp" alt="Chart from the Bengaluru air-quality data story" loading="lazy"></div>
+            <div class="body">
+              <span class="kind">Data story · air quality</span>
+              <h3>The COVID lockdowns were a breath of fresh air for Bengaluru</h3>
+              <p>If only they weren't laced with anxiety, death and loneliness.</p>
+              <ul>
+                <li>ANOVA tests for a real change in air quality before and after travel restrictions.</li>
+                <li>An LSTM forecast trained on pre- and post-lockdown data, compared side by side.</li>
+              </ul>
+              <div class="links"><a href="https://github.com/statxsphere/aqi_bangalore/blob/main/Lockdown_AQI.ipynb">Code →</a><a href="https://shoobydo.substack.com/p/the-covid-lockdowns-were-a-breath">Blog →</a></div>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="media"><img class="contain" src="assets/blog-nba.webp" alt="Chart from the NBA Draft 2021 analysis" loading="lazy"></div>
+            <div class="body">
+              <span class="kind">Data story · NBA</span>
+              <h3>NBA Draft 2021: an analysis</h3>
+              <p>Winners, losers, and a machine-learning look at how to draft well.</p>
+              <ul>
+                <li>Scraped Tankathon, Basketball Reference and nba.com to find what makes a good pick.</li>
+                <li>Averaged regression models to rank the class, and classification to find player archetypes.</li>
+              </ul>
+              <div class="links"><a href="https://github.com/statxsphere/nba_draft">Code →</a><a href="https://shoobydo.substack.com/p/nba-draft-2021-an-analysis">Blog →</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><span class="num">04</span><h2>Skills</h2><p>The kit bag.</p></div>
+        <div class="skills">
+          <div class="card skill"><h3>Geospatial and Earth observation</h3><div class="badges"><span class="badge">GDAL</span><span class="badge">RasterIO</span><span class="badge">GeoPandas</span><span class="badge">shapely</span><span class="badge">PostGIS</span><span class="badge">Google Earth Engine</span><span class="badge">QGIS</span><span class="badge">GeoParquet</span><span class="badge">LiDAR / nDSM</span><span class="badge">Optical and SAR imagery</span></div></div>
+          <div class="card skill"><h3>Machine learning and computer vision</h3><div class="badges"><span class="badge">PyTorch</span><span class="badge">timm</span><span class="badge">scikit-learn</span><span class="badge">TensorFlow / Keras</span><span class="badge">U-Net</span><span class="badge">ConvNeXt</span><span class="badge">SegFormer</span><span class="badge">YOLO</span><span class="badge">SAM</span><span class="badge">NLP</span></div></div>
+          <div class="card skill"><h3>Data and cloud</h3><div class="badges"><span class="badge">Python</span><span class="badge">SQL</span><span class="badge">pandas</span><span class="badge">NumPy</span><span class="badge">PyArrow</span><span class="badge">DuckDB</span><span class="badge">GCP: Vertex AI, GCS, Cloud Run</span><span class="badge">AWS: Lambda, S3, EC2, SageMaker</span><span class="badge">Docker</span><span class="badge">Git</span></div></div>
+          <div class="card skill"><h3>Statistics and forecasting</h3><div class="badges"><span class="badge">Hypothesis testing</span><span class="badge">ANOVA</span><span class="badge">A/B testing</span><span class="badge">Bayesian methods</span><span class="badge">ARIMA / SARIMAX</span><span class="badge">LSTM</span><span class="badge">Regression splines</span><span class="badge">Clustering and PCA</span></div></div>
+          <div class="card skill"><h3>How I ship</h3><div class="badges"><span class="badge">AI coding agents (Claude Code, Codex)</span><span class="badge">Review gates</span><span class="badge">Streamlit</span><span class="badge">Tableau</span><span class="badge">Web scraping</span><span class="badge">Pitching to executives</span></div></div>
+          <div class="card skill"><h3>Domains and languages</h3><div class="badges"><span class="badge accent">Renewable energy</span><span class="badge accent">Emissions and climate risk</span><span class="badge accent">Property data</span><span class="badge accent">Sports</span><span class="badge">English</span><span class="badge">Hindi</span><span class="badge">Kannada</span></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk.</h2>
+          <p class="muted" style="margin:0.25rem 0 0">Maps, energy, sports, or which anime to watch next.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:agarwalsshubham0@gmail.com">agarwalsshubham0@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/shubham0agarwal/">LinkedIn</a>
+          <a class="btn" href="https://github.com/statxsphere">GitHub</a>
+          <a class="btn" href="https://shoobydo.substack.com/">Shooby Do (blog)</a>
+        </div>
+      </div>
+      <div class="fine"><span>© 2026 Shubham Agarwal</span><span class="mono">Bengaluru, 12.97° N 77.59° E</span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("theme").addEventListener("click", function () {
+      var root = document.documentElement;
+      var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = dark ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+  </script>
 </body>
 </html>
