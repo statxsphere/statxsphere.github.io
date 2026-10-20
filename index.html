@@ -172,58 +172,30 @@
         <div class="section-head"><span class="num">03</span><h2>Projects</h2><p>Side quests, mostly sports and sunshine.</p></div>
         <div class="projects">
           <article class="card project wide">
-            <div class="media">
-              <svg viewBox="0 0 320 180" aria-hidden="true">
-                <rect width="320" height="180" fill="var(--muted)"/>
-                <circle cx="250" cy="44" r="18" fill="var(--accent)"/>
-                <g stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity="0.7">
-                  <path d="M250 14v-8M250 82v8M220 44h-8M280 44h8M229 23l-6-6M271 65l6 6M229 65l-6 6M271 23l6-6"/>
-                </g>
-                <g fill="none" stroke="var(--foreground)" stroke-width="1.5" opacity="0.75">
-                  <path d="M40 150v-50l40-30 40 30v50z"/>
-                  <path d="M140 150v-40h70v40z"/>
-                  <path d="M140 110l35-28 35 28"/>
-                </g>
-                <g stroke="var(--accent)" stroke-width="7" stroke-linecap="butt">
-                  <path d="M49 89l23-17M88 72l23 17M149 99l19-15M182 84l19 15"/>
-                </g>
-                <path d="M20 150h280" stroke="var(--ring)" stroke-width="1.5"/>
-              </svg>
-            </div>
+            <div class="media"><img src="assets/proj-solar.webp" alt="Map of roofs in San Francisco's Outer Sunset coloured by yearly sunlight" loading="lazy"></div>
             <div class="body">
               <span class="kind">Solar · geospatial</span>
-              <h3>Solar rooftop potential from RGB rasters</h3>
-              <p>How much sun does a roof actually get? A pipeline that turns an aerial image into a rooftop solar estimate.</p>
+              <h3>How much sun hits every roof?</h3>
+              <p>Rooftop solar potential for 3,735 buildings in San Francisco's Outer Sunset, from open LiDAR, building footprints and a typical weather year.</p>
               <ul>
-                <li>Irradiance from elevation data and roof outlines (GeoJSON) using PVLib and weather data.</li>
-                <li>Elevation estimated from the raster itself, and rooftops segmented and detected from RGB imagery.</li>
+                <li>Roof slope, aspect and shading from a 0.5 m LiDAR surface model, then pvlib irradiance for every roof pixel.</li>
+                <li>Usable area, system size, yearly kWh and CO₂ avoided per building, checked against PVGIS and Google Project Sunroof.</li>
               </ul>
-              <div class="links"><span class="note">Code available on request</span></div>
+              <div class="links"><a href="https://statxsphere.github.io/solar-calc/">Explore the map →</a><a href="https://github.com/statxsphere/solar-calc">Code →</a></div>
             </div>
           </article>
 
           <article class="card project">
-            <div class="media">
-              <svg viewBox="0 0 320 180" aria-hidden="true">
-                <rect width="320" height="180" fill="var(--muted)"/>
-                <g fill="none" stroke="var(--ring)" stroke-width="1.5">
-                  <rect x="30" y="20" width="260" height="140" rx="2"/>
-                  <path d="M160 20v140"/><circle cx="160" cy="90" r="22"/>
-                  <path d="M30 60h52v60H30M290 60h-52v60h52"/>
-                  <path d="M82 66a24 24 0 0 1 0 48M238 66a24 24 0 0 0 0 48"/>
-                </g>
-                <text x="160" y="97" text-anchor="middle" font-family="Geist Mono, monospace" font-size="20" font-weight="600" fill="var(--accent)">#1</text>
-              </svg>
-            </div>
+            <div class="media"><img src="assets/proj-nba.webp" alt="NBA draft board ranking the 2026 class" loading="lazy"></div>
             <div class="body">
               <span class="kind">Product · NBA</span>
-              <h3>NBA Draft Evaluation V2</h3>
-              <p>Who is the best player in the draft class, and who do they remind us of?</p>
+              <h3>NBA Draft Projections V4</h3>
+              <p>Every draft class since 2010, ranked by what pre-draft stats say, next to where teams actually picked.</p>
               <ul>
-                <li>Two new targets: Peak Impact Rating (best 3-season rolling VORP) and Immediate Impact Rating (first 2 seasons), both scaled to −10 to 10.</li>
-                <li>Clustering and similarity find each prospect's ceiling and floor comps, served in a Streamlit dashboard.</li>
+                <li>Peak and Immediate Impact Ratings with ranges, the stats driving each projection, and ceiling and floor comps.</li>
+                <li>Tested on each class before it was seen: stats plus draft slot rank early-career impact better than the teams did (0.48 vs 0.42 Spearman) and match them on peak, with a home-made RAPM as a second target.</li>
               </ul>
-              <div class="links"><a href="https://github.com/statxsphere/nba_draft">Code →</a><a href="https://statosphere-nba-draft-projections.streamlit.app/">Live app →</a><span class="note">it naps; wake it up</span></div>
+              <div class="links"><a href="https://statxsphere.github.io/nba_draft/">Draft board →</a><a href="https://github.com/statxsphere/nba_draft">Code →</a><a href="https://statosphere-nba-draft-projections.streamlit.app/">V2 app →</a></div>
             </div>
           </article>
 
@@ -231,13 +203,13 @@
             <div class="media"><img src="https://c.tenor.com/TKKlYOpCbV8AAAAC/dragon-ball-z-dbz.gif" alt="Dragon Ball Z powering up" loading="lazy"></div>
             <div class="body">
               <span class="kind">Product · anime</span>
-              <h3>Anime Recommendation Engine</h3>
-              <p>Tell it what you've watched; Anime Scout tells you what to watch next.</p>
+              <h3>Anime Scout</h3>
+              <p>Tell it a few anime you've watched; it tells you what to watch next.</p>
               <ul>
-                <li>EDA of what drives anime viewership, plus AniMap, a Plotly treemap to explore the catalogue.</li>
-                <li>Recommendations with clustering, PCA and cosine similarity, deployed on Streamlit.</li>
+                <li>A hybrid recommender over 12,037 anime and 23.7M user ratings: what fans also liked, plus genres, themes and synopses.</li>
+                <li>AniMap, a treemap of 20 taste groups to wander through.</li>
               </ul>
-              <div class="links"><a href="https://github.com/statxsphere/anime">Code →</a><a href="https://statxsphere-anime-explore-8o50xg.streamlit.app/">Live app →</a></div>
+              <div class="links"><a href="https://statxsphere.github.io/anime/">Find your next anime →</a><a href="https://github.com/statxsphere/anime">Code →</a></div>
             </div>
           </article>
 
